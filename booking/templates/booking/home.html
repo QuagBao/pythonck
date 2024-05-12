@@ -7,7 +7,6 @@
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -285,33 +284,62 @@
             <h1 class="heading">Khuyến mãi</h1>
         </div>
 
-        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="#">
-                        <img src="{% static 'img/lat-mat-7.webp' %}" alt="" class="d-block w-100" >
-                    </a>
+        <div class="container pt-0">
+            <div id="myCarousel_3" class="carousel slide mb-6" data-bs-ride="carousel">
+                <div style="bottom: -60px;" class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
                 </div>
-                <div class="carousel-item">
-                    <a href="#">
-                        <img src="{% static 'img/1215x365.webp' %}" alt="" class="d-block w-100" >
-                    </a>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/km-m-1.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/km-m-2.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/km-m-3.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/monday_1_.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                           
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_3" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
         </div>
+        <div style="margin-top: 60px;" class="d-flex align-items-center justify-content-center">
+            <button  class="btn btn--outline border-warning btn-additional" href="#"><h5 style="padding-left: 10px; padding-right: 10px;">Tất cả ưu đãi</h5></button>
+        </div>
+
+        <div class="container">
+
+        </div>
+
+    
     </div>
 
     
