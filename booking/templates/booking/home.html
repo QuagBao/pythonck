@@ -1,4 +1,6 @@
+
 {% extends "booking/base.html" %} 
+{% load static %}
 {% block content %}
     <div class="container">
         <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -8,35 +10,17 @@
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item carousel-item-next carousel-item-start">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                        </div>
-                    </div>
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img src="{% static 'img/lat-mat-7.webp' %}" alt="" class="d-block w-100" >
+                    </a>
+                    <p><a class="btn btn-lg btn-primary  btn-booking" href="#">Đặt vé ngay</a></p>
                 </div>
-                <div class="carousel-item carousel-item-next carousel-item-start">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                    <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                    </div>
-                    </div>
-                </div>
-                <div class="carousel-item carousel-item-next carousel-item-start">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                    <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                    </div>
-                    </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="{% static 'img/1215x365.webp' %}" alt="" class="d-block w-100" >
+                    </a>
+                    <p><a class="btn btn-lg btn-primary  btn-booking" href="#">Đặt vé ngay</a></p>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -48,7 +32,108 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+       
+        <div class="d-flex align-items-center justify-content-center">
+            <h1 class="heading">Phim đang chiếu</h1>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <div style="border: none;"  class="card text-center">
+                <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                <div style="background-color: #000;" class="card-body" >
+                    <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                    <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                        <span class="txt">Đặt Vé Ngay</span>
+                      </a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div style="border: none;"  class="card text-center">
+                  <a href="#"><img src="{% static 'img/poster-lat-mat-7.webp' %}" class="card-img-top" alt="..."></a>
+                  <div style="background-color: #000;" class="card-body" >
+                      <a href="#" class="card-title film-name">LẬT MẶT 7: MỘT ĐIỀU ƯỚC (K)</a>
+                      <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="#">
+                          <span class="txt">Đặt Vé Ngay</span>
+                        </a>
+                  </div>
+                </div>
+              </div>
+         </div>
+         <div class="d-flex align-items-center justify-content-center m-4">
+            <button  class="btn btn--outline border-warning btn-additional" href="#"><h5 style="padding-left: 10px; padding-right: 10px;">Xem thêm</h5></button>
+        </div>
+
     </div>
+    
     
 {% endblock content %}
 
