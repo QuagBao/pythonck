@@ -15,6 +15,7 @@ class Movie(models.Model):
     cast = models.CharField(max_length=255)
     duration = models.IntegerField()
     description = models.TextField()
+    image = models.ImageField(null=True, blank=True)
 
 class Theater(models.Model):
     theater_id = models.AutoField(primary_key=True)

@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def home(request):
-    context = {}
+    movies = Movie.objects.all()
+    context = {'movies':movies}
     return render(request, 'booking/home.html', context)
 
 def login(request):
