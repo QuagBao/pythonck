@@ -123,3 +123,23 @@ html,body {
 .btn-additional:hover {
     background-color: #ec833d;
 }
+
+.carousel-control-prev {
+    
+    top: 50%;
+    left: -140px; /* Điều chỉnh vị trí của nút điều khiển prev */
+    transform: translateY(-50%);
+    z-index: 1; /* Đảm bảo nút prev hiển thị trên các card */
+  }
+  
+  .carousel-control-next {
+    top: 50%;
+    right: -140px; /* Điều chỉnh vị trí của nút điều khiển next */
+    transform: translateY(-50%);
+    z-index: 1; /* Đảm bảo nút next hiển thị trên các card */
+    color: #fff;
+  }
+.carousel-control-prev-icon {
+    color: #fff;
+}
+
