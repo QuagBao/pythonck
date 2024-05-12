@@ -1,0 +1,78 @@
+html,body {
+    background-color: #000;
+}
+.hd-action {
+	width: 500px;
+	height: 40px;
+}
+
+.btn--pri{
+    font-weight: bold;
+    color: #000;
+    background: #f3ea28;
+    right: 0;   
+    top: 0;
+    width: 140px ;
+	height: 40px;
+}
+
+.btn--pri:hover {
+    background: #a19900;
+}
+
+.btn--pri span{
+	font-size: 14px;
+}
+
+.btn--second{
+    font-weight: bold;
+    color: #fff;
+    background: #663399;
+    right: 0;
+    top: 0;
+    width: 145px;
+	height: 40px;
+    z-index: -2;
+}
+.btn--pri:hover {
+    background: #d106ff;
+}
+.btn--second:hover {
+    background: #ec833d;
+}
+
+.btn--second span{
+	font-size: 14px;
+}
+
+.a_calendar {
+    text-decoration: none;
+    color: #fff;
+}
+
+.a_calendar:hover {
+    color: #f3ea28;
+}
+
+.a_sale {
+    font-weight: bold;
+    color: #fff;
+}
+
+.a_sale:hover {
+    color: #f3ea28;
+}
+
+.a_intro {
+    font-weight: bold;
+    color: #fff;
+    margin-left: 30px;
+}
+
+.a_intro:hover {
+    color: #f3ea28;
+}
+
+#main-content {
+    padding-top: 142px;
+}
