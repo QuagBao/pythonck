@@ -1,6 +1,7 @@
 from django.db import models
-
-class User(models.Model):
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+class User1(models.Model):
     user_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=255)
     email = models.EmailField()
@@ -31,7 +32,14 @@ class Screening(models.Model):
 
 class Booking(models.Model):
     booking_id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User1, on_delete=models.CASCADE)
     screening = models.ForeignKey(Screening, on_delete=models.CASCADE)
     seat_number = models.CharField(max_length=255)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    
+# Đổi form register django
+class CreateUserForm (UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
