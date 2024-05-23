@@ -8,3 +8,7 @@ def home(request):
 def login(request):
     context={}
     return render(request, 'booking/login.html', context)
+
+def movie_detail(request):
+    context={}
+    return render(request, 'booking/movie_detail.html', context)

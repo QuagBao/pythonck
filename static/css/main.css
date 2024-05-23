@@ -143,3 +143,32 @@ html,body {
     color: #fff;
 }
 
+.fa-solid {
+    color: yellow;
+}
+
+.rounded-image {
+    border-radius: 10px; /* Bo tròn 4 góc của ảnh, bạn có thể điều chỉnh giá trị này */
+}
+
+.title_film {
+    font-weight: bold;
+}
+
+
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 150px auto;
+}
+
+.modal-body {
+position:relative;
+padding:0px;
+}
+
+.btn-close {
+position:absolute;
+right:-30px;
+top:0;
+}

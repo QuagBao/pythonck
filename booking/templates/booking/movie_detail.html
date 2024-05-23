@@ -1,0 +1,94 @@
+{% extends "booking/base.html" %} 
+{% load static %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-5">
+                <img class="rounded-image" src="{% static 'img/hanh-tinh-khi.webp' %}" alt="">
+            </div>
+            <div class="col-7 text-white">
+                <h2 class="title_film">FURIOSA: CÂU CHUYỆN TỪ MAX ĐIÊN (T18)</h2>
+                <div style="font-size: 24px;" class="mt-4 mb-2">
+                    <i class="fa-solid fa-tags me-4"></i> 
+                    <span>Phiêu Lưu, Hành Động</span>
+                </div>
+                <div style="font-size: 24px;" class="mt-2 mb-2">
+                    <i class="fa-solid fa-clock me-4"></i>
+                    <span>144'</span>
+                </div>
+                <div style="font-size: 24px;" class="mt-2 mb-2">
+                    <i class="fa-solid fa-earth-americas me-4"></i>
+                    <span>Khác</span>
+                </div>
+                <div style="font-size: 24px;" class="mt-2 mb-2">
+                    <i class="fa-solid fa-comment-dots me-4"></i>
+                    <span>VN</span>
+                </div>
+                <div style="font-size: 24px;" class="mt-2 mb-2">
+                    <i class="fa-solid fa-star me-4"></i>
+                    <span>4.5</span>
+                </div>
+
+                <h4 class="mt-4" style="font-weight: bold;">MÔ TẢ</h4>
+                <div class="mt-1 mb-1">
+                    <span>Đạo diễn:</span>
+                    <span class="ms-2">George Miller</span>
+                </div>
+                <div class="mt-1 mb-1">
+                    <span>Diễn viên:</span>
+                    <span class="ms-2">Anya Taylor-Joy, Chris Hemsworth, Tom Burke</span>
+                </div>
+                <div class="mt-1 mb-1">
+                    <span>Khởi chiếu:</span>
+                    <span class="ms-2">17/05/2024</span>
+                </div>
+
+                <h4 class="mt-4" style="font-weight: bold;">NỘI DUNG PHIM</h4>
+                <div>
+                    <p>Furiosa: A Mad Max Saga kể về hành trình Furiosa bị bắt cóc khỏi Vùng Xanh của Những người mẹ và phải vật lộn tồn tại qua những sa mạc rộng lớn - nơi đói khát nhiên liệu.</p>
+                </div>
+
+                <!-- <div>
+                    <a href="" class="video-btn"> 
+                        <img alt="" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src="{% static 'img/ic-play-circle-red.svg' %}" style="color: transparent;">
+                        <span>Xem trailer</span>
+                    </a>
+                </div> -->
+
+                 <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark video-btn mt-5 ps-4 pe-4 border border-warning" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-bs-target="#myModal">
+                    Xem Trailer
+                </button>
+                <!-- Modal -->
+               
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+    
+                                <div class="modal-body">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+                                </button>
+                                <!-- 16:9 aspect ratio -->
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+    
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+             
+                
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-white">
+        <div class="d-flex align-items-center justify-content-center">
+            <h1 style="font-weight: bold;">LỊCH CHIẾU</h1>
+        </div>
+    </div>
+{% endblock content %}
