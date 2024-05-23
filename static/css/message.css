@@ -1,0 +1,21 @@
+/* Quy tắc CSS cho thông báo */
+.custom-alert {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.custom-alert.fade {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+}
+
+.custom-alert .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .75rem 1.25rem;
+    color: inherit;
+}
