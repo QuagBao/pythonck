@@ -66,6 +66,9 @@ def logoutPage(request):
     logout(request)
     messages.success(request, 'Bạn đã đăng xuất thành công.')
     return redirect('home')
+def movie_detail(request):
+    context={}
+    return render(request, 'booking/movie_detail.html', context)
 
 def search(request):
     if request.method == "POST":
