@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 import datetime
 
@@ -96,8 +95,3 @@ class Ticket(models.Model):
     def __str__(self):
         return f"Ticket for {self.showtime.movie.title} at {self.showtime.hall.name} on {self.showtime.show_date} {self.showtime.start_time} - Seat {self.seat_number}"
 
-# Đổi form register django
-class CreateUserForm (UserCreationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
