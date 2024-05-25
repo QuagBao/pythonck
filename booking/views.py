@@ -1,21 +1,34 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from .models import *
 import json
+import random
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib import messages
 # Create your views here.
 def home(request):
-    movies = Movie.objects.all()
+    movie_now_showing = Movie.objects.filter(status='now_showing')
+    movie_coming_soon = Movie.objects.filter(status='coming_soon')
+
     context = {
-        'movies':movies,
-        'is_logged_in': request.user.is_authenticated,
-        'messages': messages.get_messages(request),  # Truyền danh sách các message vào context
+        'movie_now_showing': movie_now_showing,
+        'movie_coming_soon': movie_coming_soon,
     }
     return render(request, 'booking/home.html', context)
 
+def movie_detail(request, pk):
+    movie = get_object_or_404(Movie, pk=pk)
+    showtimes = Showtime.objects.filter(movie=movie)
+
+    context = {
+        'movie': movie,
+        'showtimes': showtimes,
+    }
+
+    return render(request, 'booking/movie_detail.html', context)
+    
 def loginPage(request):
     if request.method == 'POST':
         username1 = request.POST.get('username')
@@ -66,9 +79,6 @@ def logoutPage(request):
     logout(request)
     messages.success(request, 'Bạn đã đăng xuất thành công.')
     return redirect('home')
-def movie_detail(request):
-    context={}
-    return render(request, 'booking/movie_detail.html', context)
 
 def search(request):
     if request.method == "POST":
