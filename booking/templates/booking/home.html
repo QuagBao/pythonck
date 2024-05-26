@@ -1,0 +1,292 @@
+
+{% extends "booking/base.html" %} 
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img src="{% static 'img/lat-mat-7.webp' %}" alt="" class="d-block w-100" >
+                    </a>
+                    <p><a class="btn btn-lg btn-primary  btn-booking" href="#">Đặt vé ngay</a></p>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="{% static 'img/1215x365.webp' %}" alt="" class="d-block w-100" >
+                    </a>
+                    <p><a class="btn btn-lg btn-primary  btn-booking" href="#">Đặt vé ngay</a></p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+       
+        <div class="d-flex align-items-center justify-content-center mt-5">
+            <h1 class="heading">Phim đang chiếu</h1>
+        </div>
+        <!--Phim đang chiếu-->
+        <div class="container pt-0">
+            <div id="myCarousel_1" class="carousel slide mb-6" data-bs-ride="carousel">
+                <div style="bottom: -60px;" class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel_1" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel_1" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                  <button type="button" data-bs-target="#myCarousel_1" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row row-cols-1 row-cols-md-4 g-4">
+                        {% for movie in movie_now_showing|slice:":4" %}
+                        <div class="col">
+                            <div style="border: none;"  class="card text-center">
+                                <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                                <div style="background-color: #000;" class="card-body" >
+                                    <a href="#" class="card-title film-name">{{ movie.title }}</a>
+                                    <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
+                                        <span class="txt">Đặt Vé Ngay</span>
+                                    </a>
+                                                   
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                  <div class="row row-cols-1 row-cols-md-4 g-4">
+                      {% for movie in movie_now_showing|slice:"4:8" %}
+                      <div class="col">
+                          <div style="border: none;"  class="card text-center">
+                              <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                              <div style="background-color: #000;" class="card-body" >
+                                  <a href="#" class="card-title film-name">{{ movie.title }}</a>
+                                  <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
+                                      <span class="txt">Đặt Vé Ngay</span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      {% endfor %}
+                  </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    {% for movie in movie_now_showing|slice:"8:12" %}
+                    <div class="col">
+                        <div style="border: none;"  class="card text-center">
+                            <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                            <div style="background-color: #000;" class="card-body" >
+                                <a href="#" class="card-title film-name">{{ movie.title }}</a>
+                                <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
+                                    <span class="txt">Đặt Vé Ngay</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+              
+                  
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div style="margin-top: 60px;" class="d-flex align-items-center justify-content-center">
+            <button  class="btn btn--outline border-warning btn-additional" href="#"><h5 style="padding-left: 10px; padding-right: 10px;">Xem thêm</h5></button>
+        </div>
+
+
+        <div class="d-flex align-items-center justify-content-center mt-5 pt-5">
+            <h1 class="heading">Phim sắp chiếu</h1>
+        </div>
+
+        <div class="container pt-0">
+            <div id="myCarousel_2" class="carousel slide mb-6" data-bs-ride="carousel">
+                <div style="bottom: -60px;" class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel_2" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel_2" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                  <button type="button" data-bs-target="#myCarousel_2" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row row-cols-1 row-cols-md-4 g-4">
+                        {% for movie in movie_coming_soon|slice:":4" %}
+                        <div class="col">
+                            <div style="border: none;"  class="card text-center">
+                                <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                                <div style="background-color: #000;" class="card-body" >
+                                    <a href="#" class="card-title film-name">{{ movie.title }}</a>
+                                    <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
+                                        <span class="txt">Đặt Vé Ngay</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row row-cols-1 row-cols-md-4 g-4">
+                      {% for movie in movie_coming_soon|slice:"4:8" %}
+                      <div class="col">
+                          <div style="border: none;"  class="card text-center">
+                              <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                              <div style="background-color: #000;" class="card-body" >
+                                  <a href="#" class="card-title film-name">{{ movie.title }}</a>
+                                  <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
+                                      <span class="txt">Đặt Vé Ngay</span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      {% endfor %}
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    {% for movie in movie_coming_soon|slice:"8:12" %}
+                    <div class="col">
+                        <div style="border: none;"  class="card text-center">
+                            <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                            <div style="background-color: #000;" class="card-body" >
+                                <a href="#" class="card-title film-name">{{ movie.title }}</a>
+                                <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
+                                    <span class="txt">Đặt Vé Ngay</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div style="margin-top: 60px;" class="d-flex align-items-center justify-content-center">
+            <button  class="btn btn--outline border-warning btn-additional" href="#"><h5 style="padding-left: 10px; padding-right: 10px;">Xem thêm</h5></button>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-lg-start mt-5 pt-5">
+            <h1 class="heading">Khuyến mãi</h1>
+        </div>
+
+        <div class="container pt-0">
+            <div id="myCarousel_3" class="carousel slide mb-6" data-bs-ride="carousel">
+                <div style="bottom: -60px;" class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/km-m-1.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/km-m-2.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/km-m-3.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <a href="#">
+                                    <img src="{% static 'img/monday_1_.webp' %}" alt="" class="d-block w-100" >
+                                </a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_3" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div style="margin-top: 60px;" class="d-flex align-items-center justify-content-center">
+            <button  class="btn btn--outline border-warning btn-additional" href="#"><h5 style="padding-left: 10px; padding-right: 10px;">Tất cả ưu đãi</h5></button>
+        </div>
+
+        <div class="container text-white mb-5">
+            <div style="    height: 550px;" class="row">
+                <div class="col-6 p-2 text-center">
+                    <div class="p-2">
+                        <h1 class="text-uppercase">Liên hệ chúng tôi</h1>
+                    </div>
+                    <div style="margin-left: 84px;" class="p-2 d-flex align-items-center">
+                      <img width="180px" src="{% static 'img/ct-1.webp' %}" alt="">
+                      <h1 class="text-uppercase ps-4">Facebook</h1>
+                  </div>
+                  <div style="margin-left: 200px;" class="p-2 d-flex align-items-center">
+                      <h1 class="text-uppercase pe-4">Zalo</h1>
+                      <img width="180px" src="{% static 'img/ct-2.webp' %}" alt="">
+                  </div>
+                </div>
+                <div class="col-6 bg-primary">
+                    <div class="contact-form m-4">
+                        <h1>THÔNG TIN LIÊN HỆ</h1>
+                        <div class="mt-2"><i class="fa-solid fa-envelope d-inline"></i><p class="d-inline ms-3">marketing.cinestar@gmail.com</p></div>
+                        <div class="mt-2"><i class="fa-solid fa-phone d-inline"></i><p class="d-inline ms-3">028 7300 8881</p></div>
+                        <div class="mt-2"><i class="fa-solid fa-location-dot d-inline"></i><p class="d-inline ms-3">135 Hai Bà Trưng, phường Bến Nghé, Quận 1, TP.HCM</p></div>
+                        <div class="input-group flex-nowrap mt-4 mb-4">
+                          <input type="text" class="form-control" placeholder="Họ và tên" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="input-group flex-nowrap mt-4 mb-4">
+                          <input type="text" class="form-control" placeholder="Điền email" aria-label="Email" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="mb-4">
+                          <textarea class="form-control" placeholder="Thông điệp bạn muốn truyền tải" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-lg btn-warning ps-5 pe-5 mt-3">Gửi ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock content %}
