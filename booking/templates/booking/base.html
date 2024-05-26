@@ -36,7 +36,7 @@
           </div>
           
           <div id="userSection" style="display: {% if is_logged_in %}block{% else %}none{% endif %};">
-            <span class="user-icon">👤</span>
+            <button type="button" class="user-icon" onclick="location.href='{% url 'change_password' %}';">👤</button>
             <button type="button" class="btn btn-warning" onclick="location.href='{% url 'logoutPage' %}';">Đăng xuất</button>
           </div>
         

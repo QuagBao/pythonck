@@ -50,7 +50,7 @@
                         {% for movie in movie_now_showing|slice:":4" %}
                         <div class="col">
                             <div style="border: none;"  class="card text-center">
-                                <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                                <a href="{% url 'movie_detail' pk=movie.pk %}"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
                                 <div style="background-color: #000;" class="card-body" >
                                     <a href="#" class="card-title film-name">{{ movie.title }}</a>
                                     <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
@@ -69,7 +69,7 @@
                       {% for movie in movie_now_showing|slice:"4:8" %}
                       <div class="col">
                           <div style="border: none;"  class="card text-center">
-                              <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                              <a href="{% url 'movie_detail' pk=movie.pk %}" class="card-title film-name">{{ movie.title }}</a>
                               <div style="background-color: #000;" class="card-body" >
                                   <a href="#" class="card-title film-name">{{ movie.title }}</a>
                                   <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
@@ -87,7 +87,7 @@
                     {% for movie in movie_now_showing|slice:"8:12" %}
                     <div class="col">
                         <div style="border: none;"  class="card text-center">
-                            <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                            <a href="{% url 'movie_detail' pk=movie.pk %}"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
                             <div style="background-color: #000;" class="card-body" >
                                 <a href="#" class="card-title film-name">{{ movie.title }}</a>
                                 <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
@@ -134,7 +134,7 @@
                         {% for movie in movie_coming_soon|slice:":4" %}
                         <div class="col">
                             <div style="border: none;"  class="card text-center">
-                                <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                                <a href="{% url 'movie_detail' pk=movie.pk %}"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
                                 <div style="background-color: #000;" class="card-body" >
                                     <a href="#" class="card-title film-name">{{ movie.title }}</a>
                                     <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
@@ -151,7 +151,7 @@
                       {% for movie in movie_coming_soon|slice:"4:8" %}
                       <div class="col">
                           <div style="border: none;"  class="card text-center">
-                              <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                              <a href="{% url 'movie_detail' pk=movie.pk %}"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
                               <div style="background-color: #000;" class="card-body" >
                                   <a href="#" class="card-title film-name">{{ movie.title }}</a>
                                   <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">
@@ -168,7 +168,7 @@
                     {% for movie in movie_coming_soon|slice:"8:12" %}
                     <div class="col">
                         <div style="border: none;"  class="card text-center">
-                            <a href="#"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
+                            <a href="{% url 'movie_detail' pk=movie.pk %}"><img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}"></a>
                             <div style="background-color: #000;" class="card-body" >
                                 <a href="#" class="card-title film-name">{{ movie.title }}</a>
                                 <a style="margin-right: 50px; margin-top: 10px;" class="btn btn--pri ms-5 card-text" href="{% url 'movie_detail' pk=movie.pk %}">

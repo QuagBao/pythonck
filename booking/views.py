@@ -7,6 +7,9 @@ from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+
 # Create your views here.
 def home(request):
     movie_now_showing = Movie.objects.filter(status='now_showing')
@@ -15,6 +18,8 @@ def home(request):
     context = {
         'movie_now_showing': movie_now_showing,
         'movie_coming_soon': movie_coming_soon,
+        'is_logged_in': request.user.is_authenticated,
+        'messages': messages.get_messages(request),  # Truyền danh sách các message vào context
     }
     return render(request, 'booking/home.html', context)
 
@@ -25,6 +30,7 @@ def movie_detail(request, pk):
     context = {
         'movie': movie,
         'showtimes': showtimes,
+        'is_logged_in': request.user.is_authenticated,
     }
 
     return render(request, 'booking/movie_detail.html', context)
@@ -84,9 +90,34 @@ def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
         keys = Movie.objects.filter(Q(title__icontains=searched.upper()) | Q(title__icontains=searched.lower()))
-    return render(request, 'booking/search.html', {"searched": searched, "keys": keys})
+    context = {
+        'messages': messages.get_messages(request),
+        'is_logged_in': request.user.is_authenticated,
+        "searched": searched, 
+        "keys": keys
+    }
+    return render(request, 'booking/search.html', context)
 
 def movie_seating_booking(request):
+    
     context = {
     }
     return render(request, 'booking/movie_seating_booking.html', context)
+
+def change_password(request):
+    if request.method == 'POST':
+        new_password = request.POST.get('new_password')
+        confirm_password = request.POST.get('confirm_password')
+        if new_password == confirm_password:
+            request.user.set_password(new_password)
+            request.user.save()
+            update_session_auth_hash(request, request.user)  # To keep the user logged in
+            messages.success(request, 'Mật khẩu đã được thay đổi thành công.')
+            return redirect('home')
+        else:
+            messages.error(request, 'Mật khẩu không trùng khớp. Vui lòng thử lại.')
+    context = {
+        'messages': messages.get_messages(request),
+        'is_logged_in': request.user.is_authenticated,
+    }
+    return render(request, 'booking/change_password.html',  context)

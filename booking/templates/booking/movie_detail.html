@@ -74,10 +74,134 @@
         </div>
     </div>
 
-    <div class="container mt-5 text-white">
-        <div class="d-flex align-items-center justify-content-center">
-            <h1 style="font-weight: bold;">LỊCH CHIẾU</h1>
-            
+    <div class="container text-white text-center">
+        <h1 style="font-weight: bold;">LỊCH CHIẾU</h1>
+        <div class="shtime-heading d-flex align-items-center justify-content-center text-white pt-5">
+            <div class="swiper-wrapper row d-flex justify-content-center align-items-center">
+                <div class="active swiper-slide col">
+                    <div class="box-item">
+                        <p class="date">24/05</p>
+                        <p class="day">Thứ Sáu</p>
+                    </div>
+                </div>
+                <div class="swiper-slide col">
+                     <div class="box-item">
+                        <p class="date">25/05</p>
+                        <p class="day">Thứ Bảy</p>
+                    </div>
+                </div>
+                <div class="swiper-slide col">
+                    <div class="box-item">
+                       <p class="date">26/05</p>
+                       <p class="day">Chủ Nhật</p>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <div class="shtime-body">
+            <div class="heading d-flex justify-content-between">
+                <h2>DANH SÁCH RẠP</h2>
+                <div class="dropdown sort">
+                    <a class="btn-location text-yellow" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i style="margin-right: 5px;" class="fa-solid fa-location-dot"></i> <span id="selected-location">Hà Nội</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#" data-location="Hà Nội">Hà Nội</a></li>
+                        <li><a class="dropdown-item" href="#" data-location="Đà Nẵng">Đà Nẵng</a></li>
+                        <li><a class="dropdown-item" href="#" data-location="Hồ Chí Minh">Hồ Chí Minh</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="shtime-ft">
+            <ul class="cinestar-list">
+                <li class="cinestar-item">
+                    <h4 class="title">Cinestar Quốc Thanh</h4>
+                    <p style="padding-left: 2rem;font-weight: 700;">271 Nguyễn Trãi, Phường Nguyễn Cư Trinh, Quận 1, Thành Phố Hồ Chí Minh</p>
+                    <p style="padding-left: 2rem;font-weight: 700;">Standard</p>
+                    <ul class="list-time row d-flex align-items-center">
+                        <li class="disable item-time col-2">17:15</li>
+                        <li class="disable item-time col-2">18:00</li>
+                        <li class="disable item-time col-2">18:30</li>
+                        <li class="active item-time col-2">19:30</li>
+                        <li class="active item-time col-2">21:45</li>
+                    </ul>
+                </li>
+                <li class="cinestar-item">
+                    <h4 class="title">Cinestar Quốc Thanh</h4>
+                    <p style="padding-left: 2rem;font-weight: 700;">271 Nguyễn Trãi, Phường Nguyễn Cư Trinh, Quận 1, Thành Phố Hồ Chí Minh</p>
+                    <p style="padding-left: 2rem;font-weight: 700;">Standard</p>
+                    <ul class="list-time row d-flex align-items-center">
+                        <li class="disable item-time col-2">17:15</li>
+                        <li class="disable item-time col-2">18:00</li>
+                        <li class="disable item-time col-2">18:30</li>
+                        <li class="active item-time col-2">19:30</li>
+                        <li class="active item-time col-2">21:45</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="seat-heading text-center">
+            <h1 class="heading text-uppercase">Chọn ghế</h1>
+        </div>
+        <div class="seat-indicator-scroll text-center text-white">
+            <div class="seat-screen">
+                <img src="{% static 'img/img-screen.png' %}" alt="">
+                <div class="txt">Màn hình</div>
+            </div>
+            <div class="seat-main">
+                <div class="seat-table">
+                    <table class="seat-table-inner">
+                    
+                        <tr>
+                            <td>A</td>
+                            <td class="seat-single">A14</td>
+                            <td class="seat-single">A13</td>
+                            <td class="seat-single">A12</td>
+                            <td class="seat-single">A11 </td>
+                            <td class="seat-single">A10</td>
+                            <td class="seat-single">A09</td>
+                            <td class="seat-single">A08</td>
+                            <td class="seat-single">A07</td>
+                            <td class="seat-single">A06</td>
+                            <td class="seat-single">A05</td>
+                            <td class="seat-single">A04</td>
+                            <td class="seat-single">A03</td>
+                            <td ></td>
+                            <td ></td>
+                            <td class="seat-single">A02</td>
+                            <td class="seat-single">A02</td>
+                        </tr>
+                        
+                        
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.swiper-slide');
+        slides.forEach(slide => {
+            slide.addEventListener('click', function() {
+                // Remove active class from all slides
+                slides.forEach(s => s.classList.remove('active'));
+
+                // Add active class to the clicked slide
+                slide.classList.add('active');
+            });
+        });
+        });
+        $(document).ready(function() {
+            $('.dropdown-item').click(function(event) {
+                event.preventDefault(); 
+                var location = $(this).data('location');
+                $('#selected-location').text(location);
+            });
+        });
+    </script>
 {% endblock content %}
