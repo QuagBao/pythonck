@@ -85,3 +85,8 @@ def search(request):
         searched = request.POST["searched"]
         keys = Movie.objects.filter(Q(title__icontains=searched.upper()) | Q(title__icontains=searched.lower()))
     return render(request, 'booking/search.html', {"searched": searched, "keys": keys})
+
+def movie_seating_booking(request):
+    context = {
+    }
+    return render(request, 'booking/movie_seating_booking.html', context)
